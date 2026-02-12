@@ -62,7 +62,7 @@ const Index = () => {
         >
           Google said:{" "}
           <span className="font-semibold text-primary italic">
-            "Stop thinking and just ask nena."
+            "Stop thinking and ask nena."
           </span>
         </p>
 
