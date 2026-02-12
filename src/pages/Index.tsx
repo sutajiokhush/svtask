@@ -7,8 +7,10 @@ const Index = () => {
   const [noPos, setNoPos] = useState({ x: 0, y: 0 });
 
   const runAway = useCallback(() => {
-    const x = (Math.random() - 0.5) * 450;
-    const y = (Math.random() - 0.5) * 450;
+    const isMobile = window.innerWidth < 768;
+    const range = isMobile ? 150 : 450;
+    const x = (Math.random() - 0.5) * range;
+    const y = (Math.random() - 0.5) * range;
     setNoPos({ x, y });
   }, []);
 
