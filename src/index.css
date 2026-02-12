@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Orange Avenue';
+  src: url('/fonts/OrangeAvenueDEMO-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 318 100% 96%;
+    --foreground: 330 46% 30%;
+
+    --card: 330 100% 92%;
+    --card-foreground: 330 46% 30%;
+
+    --popover: 318 100% 96%;
+    --popover-foreground: 330 46% 30%;
+
+    --primary: 330 46% 54%;
+    --primary-foreground: 318 100% 96%;
+
+    --secondary: 330 100% 86%;
+    --secondary-foreground: 330 46% 30%;
+
+    --muted: 338 78% 71%;
+    --muted-foreground: 330 46% 40%;
+
+    --accent: 338 78% 71%;
+    --accent-foreground: 318 100% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 330 100% 86%;
+    --input: 330 100% 86%;
+    --ring: 330 46% 54%;
+
+    --radius: 1rem;
+
+    --font-display: 'Orange Avenue', 'Dancing Script', cursive;
+    --font-body: 'Cormorant Garamond', 'Georgia', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
