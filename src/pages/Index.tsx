@@ -8,7 +8,7 @@ const Index = () => {
 
   const runAway = useCallback(() => {
     const isMobile = window.innerWidth < 768;
-    const range = isMobile ? 80 : 450;
+    const range = isMobile ? 150 : 450;
     const x = (Math.random() - 0.5) * range;
     const y = (Math.random() - 0.5) * range;
     setNoPos({ x, y });
@@ -62,7 +62,7 @@ const Index = () => {
         >
           Google said:{" "}
           <span className="font-semibold text-primary italic">
-            "Stop thinking and just ask nena."
+            "Stop thinking and just ask chashmish."
           </span>
         </p>
 
