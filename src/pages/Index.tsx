@@ -8,7 +8,7 @@ const Index = () => {
 
   const runAway = useCallback(() => {
     const isMobile = window.innerWidth < 768;
-    const range = isMobile ? 150 : 450;
+    const range = isMobile ? 200 : 450;
     const x = (Math.random() - 0.5) * range;
     const y = (Math.random() - 0.5) * range;
     setNoPos({ x, y });
@@ -62,7 +62,7 @@ const Index = () => {
         >
           Google said:{" "}
           <span className="font-semibold text-primary italic">
-            "Stop thinking and just ask chashmish."
+            "Stop thinking and just ask nena."
           </span>
         </p>
 
@@ -84,18 +84,23 @@ const Index = () => {
             Yes
           </button>
 
-          <button
+          <div
             onMouseEnter={runAway}
             onMouseMove={runAway}
             onTouchStart={runAway}
-            className="px-12 py-3.5 rounded-full border-2 border-primary text-primary font-semibold text-lg transition-all duration-200 backdrop-blur-sm"
-            style={{
-              transform: `translate(${noPos.x}px, ${noPos.y}px)`,
-              transition: "transform 0.15s ease-out",
-            }}
+            className="p-10" // Force field hit area
           >
-            No
-          </button>
+            <button
+              onClick={runAway}
+              className="px-12 py-3.5 rounded-full border-2 border-primary text-primary font-semibold text-lg transition-all duration-200 backdrop-blur-sm pointer-events-auto"
+              style={{
+                transform: `translate(${noPos.x}px, ${noPos.y}px)`,
+                transition: "transform 0.15s ease-out",
+              }}
+            >
+              No
+            </button>
+          </div>
         </div>
       </div>
     </div>
